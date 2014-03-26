@@ -1,0 +1,19 @@
+{
+  "name": "gulp-mediasort",
+  "version": "0.0.1",
+  "description": "A utility for sorting media files.",
+  "main": "index.js",
+  "dependencies": {
+    "exif": "*",
+    "mediainfo": "*",
+    "through2": "*"
+  },
+  "devDependencies": {
+    "gulp": "*"
+  },
+  "author": "Dave Artz <dave@artzstudio.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8"
+  }
+}
