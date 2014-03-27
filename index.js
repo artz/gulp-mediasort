@@ -3,7 +3,9 @@
 
 var fs = require('fs');
 var path = require('path');
+
 var through = require('through2');
+var mv = require('mv');
 var ExifImage = require('exif').ExifImage;
 
 var defaults = {
@@ -11,6 +13,8 @@ var defaults = {
 };
 
 function mediaSort(options) {
+
+	var startTime = new Date();
 
 	if (!options) {
 		options = {};
@@ -23,11 +27,10 @@ function mediaSort(options) {
 		for (var key in data) {
 			name = name.replace(new RegExp('{{ *' + key + ' *}}', 'g'), data[key]);
 		}
-console.log(file.path, name);
-		if (fs.stat(path.dirname(file.path)));
-		fs.rename(file.path, name, function (err) {
+
+		mv(file.path, name, { mkdirp: true }, function (err) {
 			if (err) {
-				console.log('Error writing file: ' + name, err);
+				console.log('Error moving file: ' + name, err);
 			} else {
 				console.log('Moved file: ' + name)
 			}

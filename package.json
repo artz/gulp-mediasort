@@ -6,7 +6,8 @@
   "dependencies": {
     "exif": "*",
     "mediainfo": "*",
-    "through2": "*"
+    "through2": "*",
+    "mv": "*"
   },
   "devDependencies": {
     "gulp": "*"
